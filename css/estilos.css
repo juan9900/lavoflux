@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  font-family: 'ITCAvantGardeStdBk' !important;
+  font-family: "ITCAvantGardeStdBk" !important;
 }
 
 @font-face {
@@ -20,6 +20,22 @@ body {
   src: url(../fonts/ITCAvantGardeStdBk.otf);
 }
 
+:root {
+  --primaryColor: #dcdcdc;
+  --primaryColorDarker: #4e4e4e;
+}
+
+h2 {
+  color: var(--primaryColor);
+}
+
+.gray {
+  color: var(--primaryColor);
+}
+
+.gray-darker {
+  color: var(--primaryColorDarker);
+}
 .content-section {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -56,7 +72,12 @@ h6 {
   height: auto;
   padding-top: 8rem;
   padding-bottom: 8rem;
-  background: linear-gradient(90deg, rgba(52, 58, 64, 0.1) 0%, rgba(52, 58, 64, 0.1) 100%), url("../img/fondo.webp");
+  background: linear-gradient(
+      90deg,
+      rgba(52, 58, 64, 0.1) 0%,
+      rgba(52, 58, 64, 0.1) 100%
+    ),
+    url("../img/fondo.webp");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -77,6 +98,23 @@ h6 {
   }
 }
 
+#myCarousel {
+  height: 100vh;
+}
+
+.carousel-inner {
+  height: 100%;
+}
+
+.carousel-item {
+  height: 100%;
+}
+
+.carousel-item .img-fluid {
+  height: 100%;
+  object-fit: cover;
+}
+
 footer.footer .social-link {
   display: block;
   height: 70px;
@@ -89,35 +127,35 @@ footer.footer .social-link {
 }
 
 footer.footer .social-link:hover {
-  color: #feb705;
+  color: #b6b6b6;
   text-decoration: none;
   transition: 0.8s;
 }
 
 /*Menú*/
 .nav {
-  position:fixed;
+  position: fixed;
   top: 0px;
   left: 0;
   height: 100%;
   z-index: 1;
   width: 42px;
   padding: 0;
-  margin:0;
+  margin: 0;
   /*text-align: center;*/
   background-color: rgb(38, 92, 123, 0.1);
   list-style: none;
   transition: 3s;
 }
 .nav:hover {
-  position:fixed;
+  position: fixed;
   top: 0px;
   left: 0;
   height: 100%;
   z-index: 1;
   width: 42px;
   padding: 0;
-  margin:0;
+  margin: 0;
   /*text-align: center;*/
   background-color: rgb(0, 0, 0, 0.5);
   list-style: none;
@@ -129,7 +167,7 @@ footer.footer .social-link:hover {
 }
 .menu li,
 .menu li a {
-  display:block;
+  display: block;
 }
 .menu li {
   margin: 0;
@@ -137,7 +175,7 @@ footer.footer .social-link:hover {
   z-index: 1;
 }
 .menu li a {
-  text-decoration:none;
+  text-decoration: none;
   position: relative;
   z-index: 2;
   color: transparent;
@@ -149,15 +187,15 @@ footer.footer .social-link:hover {
 .menu li a,
 .menu li.active a {
   padding: 15px 10px;
-  display:block;
+  display: block;
 }
 .menu li.active a {
   color: #fff;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .menu li a:hover {
   /*background-color: rgba(0,0,0,.5);*/
-  background-color: rgba(255,255,255,.4);
+  background-color: rgba(255, 255, 255, 0.4);
 }
 /*visually hide the navigation text*/
 .navtext {
@@ -165,16 +203,19 @@ footer.footer .social-link:hover {
   width: 250px;
   margin: 0;
   overflow: hidden;
-  padding: 0.4em .5em 1em 6em;
+  padding: 0.4em 0.5em 1em 6em;
   overflow: hidden;
   position: absolute;
-  top:0;right:0;bottom:0;left:0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   text-align: center !important;
   display: inline-block;
   transform: translateX(-200px);
   /* transition: transform .4s; */
-  transition: all .4s;
-  z-index:-1;
+  transition: all 0.4s;
+  z-index: -1;
 }
 
 /*reveal the navigation text on hover*/
@@ -183,7 +224,13 @@ footer.footer .social-link:hover {
   transform: translateX(0);
   color: #fff;
   /*background-color: rgba(0,0,0,.5);*/
-  background: linear-gradient(to right, transparent, transparent 75px, rgba(0,0,0,.5) 75px, rgba(0,0,0,.5));
+  background: linear-gradient(
+    to right,
+    transparent,
+    transparent 75px,
+    rgba(0, 0, 0, 0.5) 75px,
+    rgba(0, 0, 0, 0.5)
+  );
 }
 .menu li a:hover,
 .menu li.active a:hover,
@@ -191,28 +238,42 @@ footer.footer .social-link:hover {
   /*color: #ffdbcc;
   /*background-color: rgba(0,0,0,.5);*/
 }
-.menu_item-menu a { background-position: 0 0; }
-.menu_item-inicio a { background-position: 0 -69px; }
-.menu_item-agenda a { background-position: 0 -138px; }
-.menu_item-lavoflux a { background-position: 0 -207px; }
-.menu_item-servicios a { background-position: 0 -276px; }
-.menu_item-ubicacion a { background-position: 0 -345px; }
-.menu_item-contacto a { background-position: 0 -414px; }
+.menu_item-menu a {
+  background-position: 0 0;
+}
+.menu_item-inicio a {
+  background-position: 0 -69px;
+}
+.menu_item-agenda a {
+  background-position: 0 -138px;
+}
+.menu_item-lavoflux a {
+  background-position: 0 -207px;
+}
+.menu_item-servicios a {
+  background-position: 0 -276px;
+}
+.menu_item-ubicacion a {
+  background-position: 0 -345px;
+}
+.menu_item-contacto a {
+  background-position: 0 -414px;
+}
 
 .servicios {
   border: 10px;
-  border-color: #feb705;
+  border-color: #b6b6b6;
 }
 
 .servicios:hover {
   border: 20px;
-  border-color: #feb705;
+  border-color: #b6b6b6;
 }
 
 .btn-lavoflux {
   color: #265c7b !important;
-  background-color: #feb705 !important;
-  border-color: #feb705 !important;
+  background-color: #b6b6b6 !important;
+  border-color: #b6b6b6 !important;
 }
 
 .btn-lavoflux:hover {
@@ -236,7 +297,8 @@ footer.footer .social-link:hover {
   line-height: 45px;
 }
 
-.scroll-to-top:focus, .scroll-to-top:hover {
+.scroll-to-top:focus,
+.scroll-to-top:hover {
   color: white;
   transition: 0.8s;
 }
@@ -255,7 +317,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-  background: #feb705;
+  background: #b6b6b6;
 }
 
 body::-webkit-scrollbar-thumb:hover {
@@ -263,7 +325,9 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 /*Slide Animation*/
-.slideanim {visibility:hidden;}
+.slideanim {
+  visibility: hidden;
+}
 .slide {
   animation-name: slide;
   -webkit-animation-name: slide;
@@ -293,5 +357,15 @@ body::-webkit-scrollbar-thumb:hover {
   100% {
     opacity: 1;
     -webkit-transform: translateY(0%);
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  #myCarousel {
+    height: auto;
+  }
+
+  .carousel-item .img-fluid {
+    object-fit: contain;
   }
 }
