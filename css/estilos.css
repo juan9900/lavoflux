@@ -115,6 +115,9 @@ h6 {
   object-fit: cover;
 }
 
+.carousel-indicators li {
+  background-color: var(--primaryColor);
+}
 footer.footer .social-link {
   display: block;
   height: 70px;
@@ -274,6 +277,7 @@ footer.footer .social-link:hover {
   color: #265c7b !important;
   background-color: #b6b6b6 !important;
   border-color: #b6b6b6 !important;
+  text-transform: uppercase;
 }
 
 .btn-lavoflux:hover {
