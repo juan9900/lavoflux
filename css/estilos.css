@@ -273,6 +273,18 @@ footer.footer .social-link:hover {
   border-color: #b6b6b6;
 }
 
+.row img {
+  width: 90%;
+}
+
+.row button {
+  background: none;
+  border: none;
+}
+
+.row button:focus {
+  outline: none;
+}
 .btn-lavoflux {
   color: #265c7b !important;
   background-color: #b6b6b6 !important;
